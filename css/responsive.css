@@ -1,0 +1,32 @@
+/* responsive.css */
+
+/* Cuando la pantalla es menor a 768px */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultamos los links de la nav en móviles */
+        flex-direction: column; /* Cambiar la dirección de la lista a columna */
+        position: absolute; /* Posicionar el menú como absoluto */
+        background-color: #333; /* Fondo para el menú desplegable */
+        top: 60px; /* Ajusta este valor según la altura de tu navbar */
+        right: 0; /* Alinea a la derecha */
+        width: 100%; /* Asegúrate de que ocupe el ancho completo */
+        z-index: 1; /* Asegúrate de que esté encima de otros elementos */
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostramos el menú hamburguesa */
+        cursor: pointer;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+    }
+    .nav-links {
+        display: none; /* Ocultar links al inicio */
+        flex-direction: column; /* Cambiar la dirección de la lista a columna */
+    }
+}

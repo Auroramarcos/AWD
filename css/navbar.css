@@ -1,0 +1,102 @@
+/* Estilos básicos para la barra de navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 999; /* Asegúrate de que la navbar esté encima de otros elementos */
+}
+
+.navbar .logo img {
+    height: 40px; /* Ajusta la altura del logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Se muestra en fila en pantallas grandes */
+    gap: 20px; /* Espacio entre enlaces */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos para el menú hamburguesa */
+.hamburger-menu {
+    display: none; /* Ocultamos por defecto para pantallas grandes */
+    cursor: pointer; /* Cambia el cursor a puntero al pasar por encima */
+}
+
+/* Añadir estilo para las líneas del menú hamburguesa */
+.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease; /* Añadir transición para el efecto */
+}
+
+/* Cuando la pantalla es menor a 768px */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultamos los links de la nav en móviles */
+        flex-direction: column; /* Cambiar la dirección de la lista a columna */
+        position: absolute; /* Posicionar el menú como absoluto */
+        background-color: #333; /* Fondo para el menú desplegable */
+        top: 60px; /* Ajusta este valor según la altura de tu navbar */
+        right: 0; /* Alinea a la derecha */
+        width: 100%; /* Asegúrate de que ocupe el ancho completo */
+        z-index: 999; /* Asegúrate de que se muestre encima de otros elementos */
+    }
+
+    .nav-links.open {
+        display: flex; /* Mostrar enlaces cuando el menú está abierto */
+    }
+
+    .close {
+        display: block; /* Mostrar la 'X' cuando el menú está abierto */
+        color: white; /* Color de la 'X' */
+        font-size: 24px; /* Tamaño de la 'X' */
+        margin: 10px; /* Margen alrededor de la 'X' */
+        cursor: pointer; /* Cambia el cursor a puntero al pasar por encima */
+        position: absolute; /* Posicionamiento absoluto */
+        right: 20px; /* Alinea a la derecha */
+        top: 20px; /* Ajusta según la altura del navbar y el margen que quieras */
+    }
+
+    .hamburger-menu {
+        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+    }
+}
+
+/* Cuando el menú hamburguesa está abierto */
+.hamburger-menu.open .line {
+    display: none; /* Oculta todas las líneas del menú hamburguesa */
+}
+
+/* Ajustar la 'X' cuando el menú está abierto */
+.nav-links.open .close {
+    display: block; /* Mostrar la 'X' cuando el menú está abierto */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
