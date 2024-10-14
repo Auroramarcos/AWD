@@ -1,0 +1,152 @@
+/* Estilos básicos y de estructura */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Información en la parte superior derecha */
+.header-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.header-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Estilo del título principal */
+header h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 80px; /* Baja el título */
+    margin-bottom: 30px; /* Más espacio debajo del título */
+}
+
+.description {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 60px; /* Más espacio entre la descripción y el análisis */
+    color: #666;
+}
+
+/* Sección de análisis de las páginas */
+.analysis-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Más espacio entre las explicaciones de las páginas */
+}
+
+/* Estilo de los títulos de las páginas */
+.page-analysis h2 {
+    font-size: 1.8rem;
+    margin: 20px 20px 10px 20px; /* Margen similar a los párrafos */
+    text-align: left;
+}
+
+/* Estilo de los enlaces */
+.page-analysis a {
+    font-size: 1.2rem;
+    color: #007BFF;
+    text-decoration: none;
+    display: block;
+    margin: 0 20px 10px 20px; /* Margen similar a los párrafos */
+}
+
+.page-analysis a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de las explicaciones */
+.page-analysis p {
+    font-size: 1rem;
+    color: #555;
+    text-align: justify; /* Justificar el texto */
+    line-height: 1.8;
+    margin: 0 20px; /* Añadir margen a los lados */
+    margin-bottom: 20px; /* Espacio entre todos los párrafos */
+}
+
+/* Estilo para la línea de separación */
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 40px 0;
+}
+
+/* Añadir espacio adicional para evitar que el footer tape contenido */
+.analysis-section {
+    margin-bottom: 100px; /* Añade espacio debajo de la sección de análisis */
+}
+
+/* Estilo del footer */
+footer {
+    text-align: center;
+    width: 100%; /* Asegura que ocupe todo el ancho de la página */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-info {
+        top: 10px;
+        right: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-top: 60px; /* Baja el título en pantallas más pequeñas */
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .page-analysis h2 {
+        font-size: 1.5rem;
+    }
+
+    .page-analysis a {
+        font-size: 1rem;
+    }
+
+    .page-analysis p {
+        font-size: 0.9rem;
+        margin: 0 10px; /* Reducir margen en dispositivos móviles */
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+
