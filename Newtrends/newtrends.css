@@ -140,6 +140,22 @@ footer p {
     footer p {
         font-size: 0.9rem;
     }
+/* Estilo para el contenedor de imágenes */
+.image-container {
+    display: flex;
+    justify-content: center; /* Centra las imágenes */
+    gap: 20px; /* Espacio entre las imágenes */
+    margin-top: 20px; /* Espacio entre los párrafos y las imágenes */
+ }
+ 
+ /* Estilo para las imágenes */
+ .image-container img {
+    max-width: 20%; /* Hace que las imágenes no excedan el 45% del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border: 2px solid #ddd; /* Borde opcional */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+ }
+ 
 }
 
 
