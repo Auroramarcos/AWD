@@ -31,14 +31,14 @@ body {
 header h1 {
     font-size: 2.5rem;
     text-align: center;
-    margin-top: 80px; /* Baja el título */
-    margin-bottom: 30px; /* Más espacio debajo del título */
+    margin-top: 80px; 
+    margin-bottom: 30px; 
 }
 
 .description {
     font-size: 1.2rem;
     text-align: center;
-    margin-bottom: 60px; /* Más espacio entre la descripción y el análisis */
+    margin-bottom: 60px;
     color: #666;
 }
 
@@ -46,13 +46,13 @@ header h1 {
 .analysis-section {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Más espacio entre las explicaciones de las páginas */
+    gap: 40px;
 }
 
 /* Estilo de los títulos de las páginas */
 .page-analysis h2 {
     font-size: 1.8rem;
-    margin: 20px 20px 10px 20px; /* Margen similar a los párrafos */
+    margin: 20px 20px 10px 20px; 
     text-align: left;
 }
 
@@ -62,7 +62,7 @@ header h1 {
     color: #007BFF;
     text-decoration: none;
     display: block;
-    margin: 0 20px 10px 20px; /* Margen similar a los párrafos */
+    margin: 0 20px 10px 20px; 
 }
 
 .page-analysis a:hover {
@@ -73,10 +73,10 @@ header h1 {
 .page-analysis p {
     font-size: 1rem;
     color: #555;
-    text-align: justify; /* Justificar el texto */
+    text-align: justify; 
     line-height: 1.8;
-    margin: 0 20px; /* Añadir margen a los lados */
-    margin-bottom: 20px; /* Espacio entre todos los párrafos */
+    margin: 0 20px; 
+    margin-bottom: 20px; 
 }
 
 /* Estilo para la línea de separación */
@@ -89,13 +89,13 @@ hr {
 
 /* Añadir espacio adicional para evitar que el footer tape contenido */
 .analysis-section {
-    margin-bottom: 100px; /* Añade espacio debajo de la sección de análisis */
+    margin-bottom: 100px;
 }
 
 /* Estilo del footer */
 footer {
     text-align: center;
-    width: 100%; /* Asegura que ocupe todo el ancho de la página */
+    width: 100%; 
     position: fixed;
     bottom: 0;
     left: 0;
@@ -117,7 +117,7 @@ footer p {
 
     header h1 {
         font-size: 2rem;
-        margin-top: 60px; /* Baja el título en pantallas más pequeñas */
+        margin-top: 60px; 
     }
 
     .description {
@@ -134,7 +134,7 @@ footer p {
 
     .page-analysis p {
         font-size: 0.9rem;
-        margin: 0 10px; /* Reducir margen en dispositivos móviles */
+        margin: 0 10px; 
     }
 
     footer p {
@@ -143,17 +143,16 @@ footer p {
 /* Estilo para el contenedor de imágenes */
 .image-container {
     display: flex;
-    justify-content: center; /* Centra las imágenes */
-    gap: 20px; /* Espacio entre las imágenes */
-    margin-top: 20px; /* Espacio entre los párrafos y las imágenes */
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 20px; 
  }
  
  /* Estilo para las imágenes */
  .image-container img {
-    max-width: 20%; /* Hace que las imágenes no excedan el 45% del contenedor */
-    height: auto; /* Mantiene la proporción */
-    border: 2px solid #ddd; /* Borde opcional */
-    border-radius: 8px; /* Bordes redondeados opcionales */
+    max-width: 20%; 
+    height: auto; 
+    border: 2px solid #ddd; 
  }
  
 }
