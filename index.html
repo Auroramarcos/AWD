@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de [Tu Nombre]</title>
+    <title>Portfolio de Aurora</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navbar.css"> <!-- Asegúrate de incluir este archivo -->
     <script defer src="script.js"></script>
@@ -13,7 +13,7 @@
     <header class="navbar">
         <nav>
             <div class="logo">
-                <a href="#home"><img src="img/logo.svg" alt="Logo"></a>
+                <a href="#home"><img src="assets/images/Nombre.png" alt="Logo"></a> <!-- Verifica la ruta del logo aquí -->
             </div>
             <div class="hamburger-menu" id="hamburger-menu">
                 <span class="line"></span>
@@ -32,10 +32,7 @@
     <!-- Sección principal con SVG -->
     <section id="home" class="home-section">
         <div class="svg-container">
-            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="50" fill="lightblue"/>
-                <text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="20" fill="black">Logo</text>
-            </svg>
+            <img src="assets/images/Perfil.png" alt="Mi logo" class="responsive-logo"> <!-- Verifica la ruta del perfil aquí -->
         </div>
     </section>
 
@@ -43,14 +40,26 @@
     <main>
         <section id="about">
             <h2>Sobre mí</h2>
-            <p>Texto sobre ti...</p>
-        </section>
+            <div class="about-container">
+                <img src="assets/images/aurora.jpg" alt="Aurora" class="about-image"> <!-- Cambia la ruta y el nombre de la imagen -->
+                <div class="about-text">
+                    <p>I am Aurora, a passionate design enthusiast currently pursuing my degree in Graphic and Multimedia Design at Udit University, in Madrid.</p>
+                    <p>Creativity is my driving force, fueling my passion for design and propelling me to explore new techniques and discover fresh styles.</p>
+                    <p>One of my greatest joys in this field is collaborating with others. I'm a firm believer in the power of teamwork and the synergy that arises when diverse minds come together. Working on group projects allows me to not only share my ideas but also learn from the unique perspectives of my teammates.</p>
+                </div>
+            </div>
+        </section>        
 
         <section id="projects">
             <h2>Mis Proyectos</h2>
             <div class="grid-container">
-                <!-- Aquí irá el contenido del grid -->
-            </div>
+                <div class="grid-item">UX/UI</div>
+                <div class="grid-item">BRANDS</div>
+                <div class="grid-item">ILLUSTRATIONS</div>
+                <div class="grid-item">EDITORIAL</div>
+                <div class="grid-item">PHOTOGRAPHY</div>
+                <div class="grid-item">EDITION</div>
+            </div>            
         </section>
 
         <section id="contact">
@@ -58,5 +67,10 @@
             <p>Información de contacto...</p>
         </section>
     </main>
+
+    <!-- Footer Fijo -->
+    <footer>
+        <p>&copy; 2024 Aurora. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

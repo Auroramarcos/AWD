@@ -25,17 +25,35 @@ body {
     align-items: center;
 }
 
-/* SVG responsivo */
+/* Estilos para ajustar la imagen del logo en la sección principal */
 .svg-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    height: 80vh; /* Ajustamos la altura para dejar más espacio arriba */
 }
 
-.responsive-svg {
+.responsive-logo {
     max-width: 100%;
     height: auto;
+}
+
+/* Sección Sobre mí */
+.about-container {
+    display: flex;
+    align-items: flex-end; /* Alinear el texto a la parte inferior de la imagen */
+    margin: 40px 0; /* Espaciado entre secciones */
+}
+
+.about-image {
+    width: 300px; /* Ajusta el ancho según necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.about-text {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+    max-width: 70%; /* Limita el ancho del texto para que no esté tan a la derecha */
 }
 
 /* Secciones del contenido adicional */
@@ -47,6 +65,11 @@ section {
     margin: 40px 0; /* Espaciado entre secciones */
 }
 
+/* Específicamente para la sección de contacto */
+#contact {
+    margin-bottom: 60px; /* Espacio adicional entre el footer y la sección de contacto */
+}
+
 h2 {
     margin-bottom: 10px; /* Espaciado debajo de los títulos */
 }
@@ -55,12 +78,59 @@ p {
     line-height: 1.6; /* Mejora la legibilidad */
 }
 
-/* Estilos de grid (si se necesitan más adelante) */
+/* Estilos de grid para la sección "Mis Proyectos" */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px; /* Espaciado entre elementos */
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas en pantallas grandes */
+    gap: 20px; /* Espacio entre los grid items */
+    padding: 20px;
 }
 
+.grid-item {
+    background-color: #f0f0f0; /* Cambia esto por el color de fondo que prefieras */
+    border: 2px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de hover para los ítems del grid */
+.grid-item:hover {
+    transform: scale(1.05); /* Un pequeño efecto de aumento al pasar el ratón */
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    }
+}
+
+/* Ajustes para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: white; /* Color del texto del footer */
+    text-align: center; /* Centrar el texto del footer */
+    padding: 20px; /* Espaciado interno del footer */
+    position: fixed; /* Fijar el footer en la parte inferior */
+    bottom: 0; /* Alinear el footer al fondo */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+}
 
 
