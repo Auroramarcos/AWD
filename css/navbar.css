@@ -3,8 +3,8 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
-    color: white;
+    background-color: #CDC6C3;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,14 +23,8 @@
 }
 
 .nav-links a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-}
-
-/* Estilos para el menú hamburguesa */
-.hamburger-menu {
-    display: none; /* Ocultamos por defecto para pantallas grandes */
-    cursor: pointer; /* Cambia el cursor a puntero al pasar por encima */
 }
 
 /* Añadir estilo para las líneas del menú hamburguesa */
@@ -38,7 +32,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     margin: 5px;
     transition: all 0.3s ease; /* Añadir transición para el efecto */
 }
@@ -49,7 +43,7 @@
         display: none; /* Ocultamos los links de la nav en móviles */
         flex-direction: column; /* Cambiar la dirección de la lista a columna */
         position: absolute; /* Posicionar el menú como absoluto */
-        background-color: #333; /* Fondo para el menú desplegable */
+        background-color: #E8DFD8; /* Fondo para el menú desplegable */
         top: 60px; /* Ajusta este valor según la altura de tu navbar */
         right: 0; /* Alinea a la derecha */
         width: 100%; /* Asegúrate de que ocupe el ancho completo */
@@ -62,7 +56,7 @@
 
     .close {
         display: block; /* Mostrar la 'X' cuando el menú está abierto */
-        color: white; /* Color de la 'X' */
+        color: rgb(0, 0, 0); /* Color de la 'X' */
         font-size: 24px; /* Tamaño de la 'X' */
         margin: 10px; /* Margen alrededor de la 'X' */
         cursor: pointer; /* Cambia el cursor a puntero al pasar por encima */
@@ -73,6 +67,12 @@
 
     .hamburger-menu {
         display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+    }
+
+    /* Aumentar el interlineado entre los enlaces del menú hamburguesa */
+    .nav-links li {
+        line-height: 2; /* Ajusta este valor según tus necesidades */
+        margin: 10px 0; /* Espacio adicional entre los elementos */
     }
 }
 
@@ -85,6 +85,7 @@
 .nav-links.open .close {
     display: block; /* Mostrar la 'X' cuando el menú está abierto */
 }
+
 
 
 

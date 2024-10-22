@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 @import url('navbar.css'); /* Asegúrate de que navbar.css esté en la misma carpeta */
 
 /* Reset CSS básico para eliminar márgenes y paddings predeterminados */
@@ -10,6 +11,7 @@
 html, body {
     height: 100%; /* Aseguramos que ocupen el 100% del alto */
     width: 100%;  /* Aseguramos que ocupen el 100% del ancho */
+    font-family: 'Helvetica', sans-serif; /* Cambiamos el cuerpo de texto a Helvetica */
 }
 
 /* Añadimos margen superior para que el contenido no quede detrás de la navbar */
@@ -30,12 +32,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* Ajustamos la altura para dejar más espacio arriba */
+    height: 50vh; /* Ajustamos la altura para dejar más espacio arriba */
+    margin-top: -50px;
 }
 
 .responsive-logo {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
+    margin-top: -30px;
 }
 
 /* Sección Sobre mí */
@@ -56,6 +60,13 @@ body {
     max-width: 70%; /* Limita el ancho del texto para que no esté tan a la derecha */
 }
 
+/* Estilos para H2 - Títulos */
+h2 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat para los títulos */
+    font-weight: 600;
+    margin-bottom: 10px; /* Espaciado debajo de los títulos */
+}
+
 /* Secciones del contenido adicional */
 main {
     padding: 20px; /* Espaciado interno */
@@ -68,10 +79,6 @@ section {
 /* Específicamente para la sección de contacto */
 #contact {
     margin-bottom: 60px; /* Espacio adicional entre el footer y la sección de contacto */
-}
-
-h2 {
-    margin-bottom: 10px; /* Espaciado debajo de los títulos */
 }
 
 p {
@@ -87,11 +94,12 @@ p {
 }
 
 .grid-item {
-    background-color: #f0f0f0; /* Cambia esto por el color de fondo que prefieras */
-    border: 2px solid #ccc;
+    background-color: #E8DFD8; /* Cambia esto por el color de fondo que prefieras */
+    border: 2px solid #E8DFD8;
     padding: 20px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 400; /* No tan bold como los H2 */
+    font-family: 'Montserrat', sans-serif; /* Cambiamos a Montserrat */
     font-size: 18px;
     transition: transform 0.3s ease;
 }
@@ -124,8 +132,8 @@ p {
 
 /* Estilos para el footer */
 footer {
-    background-color: #333; /* Color de fondo del footer */
-    color: white; /* Color del texto del footer */
+    background-color: #CDC6C3; /* Color de fondo del footer */
+    color: rgb(0, 0, 0); /* Color del texto del footer */
     text-align: center; /* Centrar el texto del footer */
     padding: 20px; /* Espaciado interno del footer */
     position: fixed; /* Fijar el footer en la parte inferior */
@@ -133,4 +141,55 @@ footer {
     width: 100%; /* Ocupa todo el ancho de la ventana */
 }
 
+/* Estilos para la "X" en pantallas pequeñas (móviles) */
+#close-menu {
+    display: none; /* Por defecto, la "X" estará oculta */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Mostrar la "X" solo en pantallas pequeñas y cuando el menú esté abierto */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Por defecto, el menú está oculto en pantallas pequeñas */
+        flex-direction: column;
+        background-color: #333;
+        position: fixed;
+        top: 60px; /* Justo debajo de la barra de navegación */
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links.open {
+        display: flex; /* Mostrar el menú cuando esté abierto */
+    }
+
+    #close-menu {
+        display: block; /* Mostrar la "X" cuando el menú esté abierto */
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* Ocultar el menú hamburguesa y la "X" en pantallas grandes */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex; /* Mostrar los enlaces del menú en pantallas grandes */
+    }
+}
 
