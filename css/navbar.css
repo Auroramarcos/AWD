@@ -71,7 +71,7 @@
 
     /* Aumentar el interlineado entre los enlaces del menú hamburguesa */
     .nav-links li {
-        line-height: 2; /* Ajusta este valor según tus necesidades */
+        line-height: 0.5; /* Ajusta este valor según tus necesidades */
         margin: 10px 0; /* Espacio adicional entre los elementos */
     }
 }

@@ -98,7 +98,7 @@ p {
     border: 2px solid #E8DFD8;
     padding: 20px;
     text-align: center;
-    font-weight: 400; /* No tan bold como los H2 */
+    font-weight: 500; /* No tan bold como los H2 */
     font-family: 'Montserrat', sans-serif; /* Cambiamos a Montserrat */
     font-size: 18px;
     transition: transform 0.3s ease;
