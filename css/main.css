@@ -78,9 +78,77 @@ section {
 
 /* Específicamente para la sección de contacto */
 #contact {
-    margin-bottom: 60px; /* Espacio adicional entre el footer y la sección de contacto */
+    margin-bottom: 90px; /* Espacio adicional entre el footer y la sección de contacto */
+    background-color: #ffffff; /* Fondo para la sección de contacto */
+    text-align: center; /* Centrar el texto en la sección de contacto */
 }
 
+/* Título de la sección de contacto */
+#contact h2 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilos del formulario de contacto */
+.contact-form {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario */
+    padding: 20px; /* Espaciado interno del formulario */
+    background-color: #F3F1EF; /* Fondo del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el formulario */
+    display: flex;
+    flex-direction: column; /* Colocar elementos verticalmente */
+    gap: 15px; /* Espacio entre los elementos del formulario */
+}
+
+/* Etiquetas de texto */
+.contact-form label {
+    font-weight: bold;
+    color: #333; /* Color del texto de las etiquetas */
+}
+
+/* Campos de entrada de texto */
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    border: 1px solid #ccc; /* Borde de los campos */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+    color: #333; /* Color del texto */
+}
+
+/* Textarea del mensaje */
+.contact-form textarea {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 100px; /* Altura mínima para el textarea */
+}
+
+/* Botón de envío */
+.contact-form button {
+    padding: 12px; /* Espaciado interno */
+    background-color: #CDC6C3; /* Color de fondo del botón */
+    color: #333; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: background-color 0.3s ease; /* Transición de color */
+}
+
+.contact-form button:hover {
+    background-color: #B5B0AC; /* Color al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%; /* Uso del 90% del ancho en pantallas pequeñas */
+    }
+}
+
+/* Párrafos */
 p {
     line-height: 1.6; /* Mejora la legibilidad */
 }

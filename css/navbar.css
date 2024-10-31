@@ -6,19 +6,26 @@
     background-color: #CDC6C3;
     color: rgb(0, 0, 0);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Aseguramos que los elementos estén en los extremos */
+    align-items: center; /* Centramos verticalmente */
     padding: 10px 20px;
-    z-index: 999; /* Asegúrate de que la navbar esté encima de otros elementos */
+    z-index: 999; /* La navbar encima de otros elementos */
 }
 
+/* Ajuste del logo */
 .navbar .logo img {
-    height: 40px; /* Ajusta la altura del logo */
+    height: 40px;
 }
 
+.hamburger-menu {
+    display: none; /* Ocultamos el menú hamburguesa en pantallas grandes */
+    cursor: pointer;
+}
+
+/* Estilos de los enlaces de navegación en pantallas grandes */
 .nav-links {
     list-style: none;
-    display: flex; /* Se muestra en fila en pantallas grandes */
+    display: flex;
     gap: 20px; /* Espacio entre enlaces */
 }
 
@@ -27,63 +34,60 @@
     text-decoration: none;
 }
 
-/* Añadir estilo para las líneas del menú hamburguesa */
+/* Estilos para las líneas del menú hamburguesa */
 .line {
     display: block;
     width: 25px;
     height: 3px;
     background-color: rgb(0, 0, 0);
     margin: 5px;
-    transition: all 0.3s ease; /* Añadir transición para el efecto */
+    transition: all 0.3s ease;
 }
 
-/* Cuando la pantalla es menor a 768px */
+/* Estilos para el modo móvil */
 @media screen and (max-width: 768px) {
+    /* Mantén el logo a la izquierda y el menú a la derecha */
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between; /* Elementos en extremos opuestos */
+        padding: 10px 20px;
+    }
+
     .nav-links {
-        display: none; /* Ocultamos los links de la nav en móviles */
-        flex-direction: column; /* Cambiar la dirección de la lista a columna */
-        position: absolute; /* Posicionar el menú como absoluto */
-        background-color: #E8DFD8; /* Fondo para el menú desplegable */
-        top: 60px; /* Ajusta este valor según la altura de tu navbar */
-        right: 0; /* Alinea a la derecha */
-        width: 100%; /* Asegúrate de que ocupe el ancho completo */
-        z-index: 999; /* Asegúrate de que se muestre encima de otros elementos */
+        display: none; /* Ocultamos los enlaces de navegación por defecto en móvil */
+        flex-direction: column;
+        position: absolute;
+        background-color: #E8DFD8;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        z-index: 999;
     }
 
     .nav-links.open {
         display: flex; /* Mostrar enlaces cuando el menú está abierto */
     }
 
-    .close {
-        display: block; /* Mostrar la 'X' cuando el menú está abierto */
-        color: rgb(0, 0, 0); /* Color de la 'X' */
-        font-size: 24px; /* Tamaño de la 'X' */
-        margin: 10px; /* Margen alrededor de la 'X' */
-        cursor: pointer; /* Cambia el cursor a puntero al pasar por encima */
-        position: absolute; /* Posicionamiento absoluto */
-        right: 20px; /* Alinea a la derecha */
-        top: 20px; /* Ajusta según la altura del navbar y el margen que quieras */
-    }
-
+    /* Mostramos el menú hamburguesa en modo móvil */
     .hamburger-menu {
-        display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+        display: block;
     }
 
-    /* Aumentar el interlineado entre los enlaces del menú hamburguesa */
     .nav-links li {
-        line-height: 0.5; /* Ajusta este valor según tus necesidades */
-        margin: 10px 0; /* Espacio adicional entre los elementos */
+        line-height: 1.5;
+        margin: 15px 0;
     }
-}
 
-/* Cuando el menú hamburguesa está abierto */
-.hamburger-menu.open .line {
-    display: none; /* Oculta todas las líneas del menú hamburguesa */
-}
-
-/* Ajustar la 'X' cuando el menú está abierto */
-.nav-links.open .close {
-    display: block; /* Mostrar la 'X' cuando el menú está abierto */
+    /* Estilo de la "X" para cerrar el menú */
+    .close {
+        display: block;
+        font-size: 24px;
+        color: rgb(0, 0, 0);
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+    }
 }
 
 
