@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #CDC6C3;
+    background-color: #9bff30;
     color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between; /* Aseguramos que los elementos estén en los extremos */
@@ -32,6 +32,15 @@
 .nav-links a {
     color: rgb(0, 0, 0);
     text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover sobre los enlaces */
+.nav-links a:hover {
+    background-color: #D699FF;
+    border-radius: 5px;
 }
 
 /* Estilos para las líneas del menú hamburguesa */
@@ -46,36 +55,40 @@
 
 /* Estilos para el modo móvil */
 @media screen and (max-width: 768px) {
-    /* Mantén el logo a la izquierda y el menú a la derecha */
+    /* La navbar se pone en fila para pantallas móviles */
     .navbar {
         flex-direction: row;
-        justify-content: space-between; /* Elementos en extremos opuestos */
+        justify-content: space-between;
         padding: 10px 20px;
     }
 
+    /* Ocultamos los enlaces de navegación por defecto en móviles */
     .nav-links {
-        display: none; /* Ocultamos los enlaces de navegación por defecto en móvil */
+        display: none;
         flex-direction: column;
         position: absolute;
-        background-color: #E8DFD8;
+        background-color: #ccc;
         top: 60px;
         right: 0;
         width: 100%;
         z-index: 999;
     }
 
+    /* Mostramos los enlaces cuando el menú está abierto */
     .nav-links.open {
-        display: flex; /* Mostrar enlaces cuando el menú está abierto */
+        display: flex;
     }
 
-    /* Mostramos el menú hamburguesa en modo móvil */
+    /* Mostramos el menú hamburguesa en móviles */
     .hamburger-menu {
         display: block;
     }
 
+    /* Estilo de cada enlace del menú en móviles */
     .nav-links li {
         line-height: 1.5;
         margin: 15px 0;
+        text-align: center; /* Centrar texto en los enlaces */
     }
 
     /* Estilo de la "X" para cerrar el menú */
@@ -88,7 +101,68 @@
         top: 20px;
         cursor: pointer;
     }
+
+    /* Estilos para el menú hamburguesa cuando está abierto */
+    .hamburger-menu.open .line:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 7px;
+    }
+
+    .hamburger-menu.open .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.open .line:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -7px;
+    }
 }
+
+/* ------------------------------------------ */
+/* Estilos para el carrusel */
+/* ------------------------------------------ */
+
+/* Estilos básicos para el carrusel */
+.carousel {
+    display: flex; /* Para alinear las imágenes de forma horizontal */
+    justify-content: center;  /* Centra las imágenes horizontalmente */
+    align-items: flex-start;  /* Ajuste vertical: alineamos las imágenes al inicio */
+    position: relative; /* Necesario para manejar la posición de las imágenes */
+    overflow: hidden;  /* Esconde las imágenes fuera del contenedor */
+    width: 100%;  /* El carrusel ocupa el 100% del ancho disponible */
+    height: 100vh; /* La altura del carrusel ocupa el 100% de la altura de la ventana */
+    background-color: #f0f0f0;  /* Fondo gris claro para verificar el tamaño del contenedor */
+}
+
+/* Estilos de las imágenes del carrusel */
+.carousel-image {
+    width: 100%;  /* Las imágenes ocuparán el 100% del ancho del contenedor */
+    height: auto;  /* Mantiene la proporción de las imágenes */
+    display: none;  /* Las imágenes estarán ocultas por defecto */
+    object-fit: cover;  /* Las imágenes se ajustan al tamaño sin perder proporción */
+}
+
+/* Mostrar la imagen activa */
+.carousel-image.active {
+    display: block;  /* Solo se muestra la imagen activa */
+}
+
+/* Añadir transición suave al cambiar las imágenes */
+.carousel-image {
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-image:not(.active) {
+    opacity: 0;
+}
+
+ 
 
 
 

@@ -12,7 +12,7 @@
     <!-- Barra de Navegación Fija -->
     <header class="navbar">
         <div class="logo">
-            <a href="#home"><img src="assets/images/Perfil.png" alt="Logo"></a> <!-- Verifica la ruta del logo aquí -->
+            <a href="#home"><img src="assets/images/Perfil.png" alt="Logo"></a>
         </div>
         <div class="hamburger-menu" id="hamburger-menu">
             <span class="line"></span>
@@ -27,55 +27,100 @@
         </ul>
     </header>
 
-    <!-- Sección principal con SVG -->
-    <section id="home" class="home-section">
-        <div class="svg-container">
-            <img src="assets/images/Perfil.png" alt="Mi logo" class="responsive-logo"> <!-- Verifica la ruta del perfil aquí -->
-        </div>
-    </section>
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+        <img src="assets/images/foto final 4.jpg" alt="Image 1" class="carousel-image active">
+        <img src="assets/images/foto final 5.jpg" alt="Image 2" class="carousel-image">
+        <img src="assets/images/foto final 6.jpg" alt="Image 3" class="carousel-image">
+    </div>
 
     <!-- Sección de contenido adicional -->
     <main>
         <section id="about">
             <h2>ABOUT ME</h2>
             <div class="about-container">
-                <img src="assets/images/foto.jpg" alt="Aurora" class="about-image"> <!-- Cambia la ruta y el nombre de la imagen -->
+                <img src="assets/images/foto.jpg" alt="Aurora" class="about-image">
                 <div class="about-text">
                     <p>I am Aurora, a passionate design enthusiast currently pursuing my degree in Graphic and Multimedia Design at Udit University, in Madrid.</p>
                     <p>Creativity is my driving force, fueling my passion for design and propelling me to explore new techniques and discover fresh styles.</p>
                     <p>One of my greatest joys in this field is collaborating with others. I'm a firm believer in the power of teamwork and the synergy that arises when diverse minds come together. Working on group projects allows me to not only share my ideas but also learn from the unique perspectives of my teammates.</p>
                 </div>
             </div>
-        </section>        
+        </section>     
+
+        <div id="second-carousel">
+            <div class="carousel">
+                <img src="assets/images/imagen1.jpg" alt="New Image 1" class="carousel-image active">
+                <img src="assets/images/imagen2.jpg" alt="New Image 2" class="carousel-image">
+                <img src="assets/images/Imagen3.jpg" alt="New Image 3" class="carousel-image">
+            </div>   
+        </div>
+        
 
         <section id="projects">
             <h2>MY PROJECTS</h2>
             <div class="grid-container">
-                <div class="grid-item">UX/UI</div>
-                <div class="grid-item">BRANDS</div>
-                <div class="grid-item">ILLUSTRATIONS</div>
-                <div class="grid-item">EDITORIAL</div>
-                <div class="grid-item">PHOTOGRAPHY</div>
-                <div class="grid-item">EDITION</div>
+                <div class="grid-item">
+                    <div class="title">UX/UI</div>
+                    <div class="description-container">
+                        <img src="assets/images/ux.jpg" alt="UX/UI">
+                        <p>Designing a complete travel app</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="title">BRANDS</div>
+                    <div class="description-container">
+                        <img src="assets/images/brand.jpg" alt="Brands">
+                        <p>Design of a brand for a coffee shop</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="title">ILLUSTRATIONS</div>
+                    <div class="description-container">
+                        <img src="assets/images/illustration.jpg" alt="Illustrations">
+                        <p>Design of posters for the day of peace</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="title">EDITORIAL</div>
+                    <div class="description-container">
+                        <img src="assets/images/editorial.jpg" alt="Editorial">
+                        <p>Design of a fanzine of the 7 wonders of the world</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="title">PHOTOGRAPHY</div>
+                    <div class="description-container">
+                        <img src="assets/images/photography.jpg" alt="Photography">
+                        <p>Photographs taken with camera</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="title">EDITION</div>
+                    <div class="description-container">
+                        <img src="assets/images/edition.jpg" alt="Edition">
+                        <p>Sincity-style photo editing</p>
+                    </div>
+                </div>
             </div>            
         </section>
 
         <section id="contact">
             <h2>CONTACT ME</h2>
             <form action="#" method="post" class="contact-form">
-                <label for="first-name">Nombre</label>
+                <label for="first-name">Name</label>
                 <input type="text" id="first-name" name="first-name" required>
                 
-                <label for="last-name">Apellido</label>
+                <label for="last-name">Surname</label>
                 <input type="text" id="last-name" name="last-name" required>
                 
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
                 
-                <label for="message">Mensaje</label>
+                <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
                 
-                <button type="submit">Enviar</button>
+                <button type="submit">Send</button>
             </form>
         </section>        
     </main>

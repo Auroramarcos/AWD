@@ -1,6 +1,6 @@
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionar el menú hamburguesa, los enlaces de navegación y la 'X'
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // *** Funcionalidad del Menú ***
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
     const closeBtn = document.querySelector('.close'); // Selecciona la 'X'
@@ -30,16 +30,30 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburgerMenu.classList.remove('open'); // Remover la clase 'open'
         });
     });
+
+    // *** Funcionalidad de los Carruseles ***
+    const carousels = document.querySelectorAll('.carousel'); // Selecciona todos los carruseles
+
+    carousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-image');
+        let currentIndex = 0;
+
+        const changeImage = () => {
+            // Quitar la clase 'active' de la imagen actual
+            images[currentIndex].classList.remove('active');
+
+            // Calcular el índice de la siguiente imagen
+            currentIndex = (currentIndex + 1) % images.length;
+
+            // Agregar la clase 'active' a la nueva imagen
+            images[currentIndex].classList.add('active');
+        };
+
+        // Cambiar la imagen cada 2 segundos
+        setInterval(changeImage, 2000);
+
+        // Mostrar la primera imagen al inicio
+        images[currentIndex].classList.add('active');
+    });
 });
-
-
-
-
-
-
-
-
-
-
-
 

@@ -14,17 +14,18 @@ html, body {
     font-family: 'Helvetica', sans-serif; /* Cambiamos el cuerpo de texto a Helvetica */
 }
 
-/* Añadimos margen superior para que el contenido no quede detrás de la navbar */
+/* Aseguramos que no haya margen superior, ya que se ha incluido en la navbar */
 body {
-    padding-top: 60px; /* Ajusta este valor según la altura de tu navbar */
+    padding-top: 0; /* Aseguramos que no haya margen superior extra */
 }
 
 /* Estilos para la sección principal */
 .home-section {
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 50vh; /* Cambié el min-height para que no ocupe toda la pantalla */
+    background-color: transparent; /* Aseguramos que no haya fondo indeseado */
 }
 
 /* Estilos para ajustar la imagen del logo en la sección principal */
@@ -33,26 +34,28 @@ body {
     justify-content: center;
     align-items: center;
     height: 50vh; /* Ajustamos la altura para dejar más espacio arriba */
-    margin-top: -50px;
+    margin-top: -50px; /* Evitamos que suba mucho la imagen */
 }
 
 .responsive-logo {
     max-width: 60%;
     height: auto;
-    margin-top: -30px;
+    margin-top: 0; /* Eliminamos el margen arriba */
 }
 
 /* Sección Sobre mí */
 .about-container {
     display: flex;
-    align-items: flex-end; /* Alinear el texto a la parte inferior de la imagen */
-    margin: 40px 0; /* Espaciado entre secciones */
+    align-items: flex-start; /* Cambié a flex-start para evitar que el texto se baje demasiado */
+    margin: 0; /* Eliminé márgenes innecesarios */
+    padding: 40px 0; /* Añadí padding en vez de margen */
 }
 
 .about-image {
     width: 300px; /* Ajusta el ancho según necesites */
     height: auto; /* Mantiene la proporción de la imagen */
     margin-right: 20px; /* Espacio entre la imagen y el texto */
+    margin-top: 0; /* Evita cualquier espacio adicional */
 }
 
 .about-text {
@@ -128,7 +131,7 @@ section {
 /* Botón de envío */
 .contact-form button {
     padding: 12px; /* Espaciado interno */
-    background-color: #CDC6C3; /* Color de fondo del botón */
+    background-color: #D699FF; /* Color de fondo del botón */
     color: #333; /* Color del texto del botón */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
@@ -139,18 +142,7 @@ section {
 }
 
 .contact-form button:hover {
-    background-color: #B5B0AC; /* Color al pasar el ratón */
-}
-
-@media (max-width: 768px) {
-    .contact-form {
-        width: 90%; /* Uso del 90% del ancho en pantallas pequeñas */
-    }
-}
-
-/* Párrafos */
-p {
-    line-height: 1.6; /* Mejora la legibilidad */
+    background-color: #9F21CE; /* Color al pasar el ratón */
 }
 
 /* Estilos de grid para la sección "Mis Proyectos" */
@@ -162,19 +154,41 @@ p {
 }
 
 .grid-item {
-    background-color: #E8DFD8; /* Cambia esto por el color de fondo que prefieras */
-    border: 2px solid #E8DFD8;
+    background-color: #d699ff; /* Cambia esto por el color de fondo que prefieras */
     padding: 20px;
     text-align: center;
     font-weight: 500; /* No tan bold como los H2 */
     font-family: 'Montserrat', sans-serif; /* Cambiamos a Montserrat */
     font-size: 18px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, height 0.3s ease; /* Añadido para la animación */
+    height: 120px; /* Altura inicial de los rectángulos */
+    overflow: hidden; /* Asegura que el contenido extra no se vea */
+    border-radius: 10px; /* Bordes redondeados en los rectángulos */
 }
 
 /* Efecto de hover para los ítems del grid */
 .grid-item:hover {
     transform: scale(1.05); /* Un pequeño efecto de aumento al pasar el ratón */
+    height: 300px; /* Aumenta la altura al hacer hover */
+    background-color: #ebd6f9; /* Cambia el color del fondo */
+}
+
+.grid-item .description-container {
+    display: none; /* Oculta la imagen y descripción por defecto */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transición de opacidad para mostrar y ocultar */
+}
+
+.grid-item:hover .description-container {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilos para las imágenes dentro de cada item del grid */
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
 
 /* Ajustes para pantallas medianas (tablets) */
@@ -189,36 +203,20 @@ p {
     .grid-container {
         grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
     }
-}
 
-/* Ajustes para pantallas aún más pequeñas */
-@media (max-width: 480px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    .home-section {
+        margin-bottom: 0;  /* Elimina el margen inferior en pantallas pequeñas */
     }
-}
 
-/* Estilos para el footer */
-footer {
-    background-color: #CDC6C3; /* Color de fondo del footer */
-    color: rgb(0, 0, 0); /* Color del texto del footer */
-    text-align: center; /* Centrar el texto del footer */
-    padding: 20px; /* Espaciado interno del footer */
-    position: fixed; /* Fijar el footer en la parte inferior */
-    bottom: 0; /* Alinear el footer al fondo */
-    width: 100%; /* Ocupa todo el ancho de la ventana */
-}
+    .about-container {
+        margin-top: 0;  /* Elimina el margen superior entre el carrusel y About me */
+    }
 
-/* Estilos para la "X" en pantallas pequeñas (móviles) */
-#close-menu {
-    display: none; /* Por defecto, la "X" estará oculta */
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-}
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
 
-/* Mostrar la "X" solo en pantallas pequeñas y cuando el menú esté abierto */
-@media (max-width: 768px) {
     .nav-links {
         display: none; /* Por defecto, el menú está oculto en pantallas pequeñas */
         flex-direction: column;
@@ -237,27 +235,77 @@ footer {
     }
 
     #close-menu {
-        display: block; /* Mostrar la "X" cuando el menú esté abierto */
+        display: none; /* Asegurarse de que la "X" no aparezca en pantallas grandes */
+    }
+
+    .nav-links.open #close-menu {
+        display: block; /* Mostrar la "X" solo cuando el menú esté abierto */
         position: absolute;
         top: 10px;
         right: 20px;
         color: rgb(0, 0, 0);
     }
+}
 
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
+/* En pantallas grandes, la "X" nunca debe mostrarse */
+@media (min-width: 769px) {
+    #close-menu {
+        display: none; /* Asegurarse de que no se muestre la "X" en pantallas más grandes */
     }
 }
 
-/* Ocultar el menú hamburguesa y la "X" en pantallas grandes */
-@media (min-width: 769px) {
-    .hamburger-menu {
-        display: none;
-    }
+/* Estilos específicos para el segundo carrusel */
+#second-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%; /* Limita el carrusel al 80% del ancho de la pantalla */
+    height: 350px; /* Reduce la altura general del segundo carrusel */
+    margin: 0 auto; /* Centra el carrusel */
+    overflow: hidden; /* Evita que las imágenes se salgan */
+}
 
-    .nav-links {
-        display: flex; /* Mostrar los enlaces del menú en pantallas grandes */
-    }
+#second-carousel .carousel {
+    position: relative;
+    width: 100%; /* Asegura que el carrusel ocupe todo el ancho disponible */
+    height: 100%; /* Asegura que ocupe toda la altura disponible */
+}
+
+#second-carousel .carousel-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5); /* Reduce el tamaño de la imagen al 50% */
+    opacity: 0; /* La imagen comienza oculta */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y tamaño */
+    width: 70%; /* Limita el ancho de la imagen al 70% del contenedor */
+    max-width: 500px; /* Limita el tamaño máximo a 500px */
+    height: auto; /* Mantiene la proporción */
+}
+
+#second-carousel .carousel-image.active {
+    opacity: 1; /* Muestra la imagen activa */
+    transform: translate(-50%, -50%) scale(1); /* La imagen activa vuelve al 100% de tamaño */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #9bff30; /* Color de fondo del footer */
+    color: rgb(0, 0, 0); /* Color del texto del footer */
+    text-align: center; /* Centrar el texto del footer */
+    padding: 20px; /* Espaciado interno del footer */
+    position: fixed; /* Fijar el footer en la parte inferior */
+    bottom: 0; /* Alinear el footer al fondo */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+}
+
+/* Título dentro de los grid-item */
+.grid-item .title {
+    margin-bottom: 15px; /* Añadir espacio debajo del título */
+}
+
+/* Imagen dentro de la grid-item */
+.grid-item .description-container img {
+    margin-top: 15px; /* Añadir espacio encima de la imagen */
 }
 
