@@ -154,7 +154,8 @@ section {
 }
 
 .grid-item {
-    background-color: #d699ff; /* Cambia esto por el color de fondo que prefieras */
+    background-color: #000000; /* Cambia esto por el color de fondo que prefieras */
+    color: white;
     padding: 20px;
     text-align: center;
     font-weight: 500; /* No tan bold como los H2 */
@@ -170,7 +171,7 @@ section {
 .grid-item:hover {
     transform: scale(1.05); /* Un pequeño efecto de aumento al pasar el ratón */
     height: 300px; /* Aumenta la altura al hacer hover */
-    background-color: #ebd6f9; /* Cambia el color del fondo */
+    background-color: #D699FF; /* Cambia el color del fondo */
 }
 
 .grid-item .description-container {
@@ -309,3 +310,76 @@ footer {
     margin-top: 15px; /* Añadir espacio encima de la imagen */
 }
 
+
+/* Contenedor de la sección About */
+.about-container {
+    display: flex; /* Usamos flexbox para alinear el cubo y el texto */
+    justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+    align-items: flex-start; /* Alinea los elementos al principio verticalmente */
+    gap: 20px; /* Espacio entre el cubo y el texto */
+}
+
+/* Contenedor del cubo */
+.cube-container {
+    width: 400px; /* Tamaño del contenedor */
+    height: 400px; /* Tamaño del contenedor */
+    perspective: 1200px; /* Profundidad 3D */
+    margin-left: 150px; /* Mueve el cubo más hacia la derecha */
+    display: inline-block; /* Permite que el cubo se alinee a la izquierda */
+}
+
+/* Estilo del cubo */
+.cube {
+    width: 200px; /* Tamaño del cubo */
+    height: 200px; /* Tamaño del cubo */
+    position: absolute;
+    transform-style: preserve-3d; /* Habilita la 3D */
+    animation: spin 6s infinite linear; /* Animación giratoria */
+    will-change: transform; /* Mejora el rendimiento de la animación */
+    transform-origin: center; /* Asegura que la animación se haga desde el centro */
+    backface-visibility: hidden; /* Evita que se vea la parte posterior del cubo */
+}
+
+/* Caras del cubo */
+.cube div {
+    position: absolute;
+    width: 200px; /* Tamaño de las caras */
+    height: 200px; /* Tamaño de las caras */
+    background: rgba(128, 0, 255, 0.8); /* Fondo morado translúcido */
+    border: 2px solid white; /* Borde blanco */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Sombra suave */
+    overflow: hidden; /* Elimina cualquier desbordamiento de las imágenes */
+}
+
+/* Posiciones de las caras */
+.cube .front  { transform: translateZ(100px); }
+.cube .back   { transform: rotateY(180deg) translateZ(100px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube .right  { transform: rotateY(90deg) translateZ(100px); }
+.cube .top    { transform: rotateX(90deg) translateZ(100px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Añadir imágenes dentro de las caras */
+.cube div img {
+    width: 100%;  /* Asegura que la imagen ocupe todo el contenedor */
+    height: 100%; /* Ajusta la altura de la imagen */
+    object-fit: cover; /* Asegura que la imagen se cubra completamente */
+}
+
+/* Animación del cubo */
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Contenedor de texto */
+.about-text {
+    display: inline-block; /* Alineación del texto al lado del cubo */
+    max-width: 600px; /* Limitar el ancho máximo */
+    vertical-align: top; /* Alinea el texto al principio, al nivel superior */
+    margin-top: 20px; /* Opcional: Agrega un margen para mover el texto más hacia arriba */
+}
